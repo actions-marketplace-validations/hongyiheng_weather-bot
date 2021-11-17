@@ -1,0 +1,19 @@
+name: 'notification bot'
+description: 'GitHub Action for notification bot'
+author: 'hyh'
+branding:
+  icon: 'check-circle'
+  color: 'gray-dark'
+inputs:
+  webhook:
+    description: 'wx_work bot url'
+    required: true
+  city_code:
+    description: 'city code from https://where.heweather.com/index.html'
+    required: true
+outputs:
+  result:
+    description: 'The result of api'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
