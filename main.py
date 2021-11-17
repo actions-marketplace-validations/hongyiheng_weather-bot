@@ -1,3 +1,5 @@
+import os
+
 from actions_toolkit import core
 
 from app.weather import weather_bot

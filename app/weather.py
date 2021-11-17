@@ -1,9 +1,8 @@
 import requests
 
 
-def weather_bot(city_code, push_url):
+def weather_bot(city_code, push_urls):
     api = 'http://t.weather.itboy.net/api/weather/city/'
-    # 城市代码
     url = api + city_code
     response = requests.get(url)
     resp = response.json()
@@ -26,7 +25,7 @@ def weather_bot(city_code, push_url):
         push_content += "天气： " + weather_type + "\n"
         push_content += "温度： " + wendu_low + " / " + wendu_high + "\n"
         push_content += "湿度： " + shidu + "\n"
-        push_content += "空气： " + quality + " （PM2.5：" + pm25 + "， PM10: " + pm10 + "）\n"
+        push_content += "空气： " + quality + " （PM2.5：" + pm25 + "， PM10：" + pm10 + "）\n"
         push_content += "风况： " + fx + fl
 
         form_data = {
@@ -36,5 +35,7 @@ def weather_bot(city_code, push_url):
             }
         }
         headers = {"Content-Type": "text/plain"}
-        res = requests.post(url=push_url, headers=headers, json=form_data)
-        print(res.text)
+        urls = push_urls.split(",")
+        for url in urls:
+            res = requests.post(url=url, headers=headers, json=form_data)
+            print(res.text)
