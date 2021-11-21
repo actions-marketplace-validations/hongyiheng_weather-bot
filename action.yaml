@@ -1,12 +1,12 @@
 name: qweather bot
-description: 'GitHub Action for notification bot'
+description: 'GitHub Action for weather bot'
 author: 'hyh'
 branding:
   icon: 'check-circle'
   color: 'gray-dark'
 inputs:
   webhook:
-    description: 'wx_work bot url'
+    description: 'wx_work bot webhook'
     required: true
   city_code:
     description: 'city code from https://where.heweather.com/index.html'
