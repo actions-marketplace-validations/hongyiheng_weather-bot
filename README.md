@@ -20,7 +20,7 @@ jobs:
   checkin:
     runs-on: ubuntu-latest
     steps:
-      - uses: hongyiheng/weather-bot@v0.0.2
+      - uses: hongyiheng/weather-bot@v0.0.3
         with:
           email: ${{ secrets.CITY_CODE }}
           passwd: ${{ secrets.WEBHOOK }}
