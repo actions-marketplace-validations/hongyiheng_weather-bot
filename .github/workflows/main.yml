@@ -9,7 +9,7 @@ jobs:
   checkin:
     runs-on: ubuntu-latest
     steps:
-      - uses: hongyiheng/notification-bot@main
+      - uses: hongyiheng/weather-bot@v0.0.3
         with:
           webhook: ${{ secrets.WEBHOOK }}
           city_code: ${{ secrets.CITY_CODE }}
